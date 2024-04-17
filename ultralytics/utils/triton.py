@@ -59,11 +59,13 @@ class TritonRemoteModel:
         config["output"] = sorted(config["output"], key=lambda x: x.get("name"))
 
         # Pose model
-        if config['parameters'].get('kpt_shape'):
-            self.kpt_shape = [int(x) for x in config['parameters']['kpt_shape'].get('string_value').strip('[]').split(',')]
+        if config["parameters"].get("kpt_shape"):
+            self.kpt_shape = [
+                int(x) for x in config["parameters"]["kpt_shape"].get("string_value").strip("[]").split(",")
+            ]
 
-        if config['parameters'].get('names'):
-            class_labels = config['parameters']['names'].get('string_value')
+        if config["parameters"].get("names"):
+            class_labels = config["parameters"]["names"].get("string_value")
             if class_labels:
                 self.names = [v for k, v in sorted(eval(class_labels).items())]
 

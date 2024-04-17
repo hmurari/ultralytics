@@ -386,9 +386,9 @@ class AutoBackend(nn.Module):
             from ultralytics.utils.triton import TritonRemoteModel
 
             model = TritonRemoteModel(w)
-            if hasattr(model, 'names'): # pose-only
+            if hasattr(model, "names"):  # pose-only
                 names = model.names
-            if hasattr(model, 'kpt_shape'): # pose-only
+            if hasattr(model, "kpt_shape"):  # pose-only
                 kpt_shape = model.kpt_shape
 
         # Any other format (unsupported)
